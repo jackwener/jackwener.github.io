@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="所有的blog都是孤芳自赏">
+<meta name="description" content="定了个小计划,大概能2-3天看一章并做习题,这套书感觉也可能不会看完,实在太多了,看了1本之后估计后面当手册翻翻   这章环境那一些看的不太懂2333  6-1 编译程序清单6-1中的程序，使用ls -l命令显示可执行文件的大小，解释为什么可执行文件的大小远小于10MB，但是程序中包含了一个10MB的数组？  1234567891011121314151617181920212223242526">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tlpi6章习题">
+<meta property="og:title" content="linux&#x2F;unix系统编程手册 6章习题">
 <meta property="og:url" content="http://yoursite.com/2018/05/07/tlpi6章习题/index.html">
 <meta property="og:site_name" content="jakevin的博客">
-<meta property="og:description" content="所有的blog都是孤芳自赏">
+<meta property="og:description" content="定了个小计划,大概能2-3天看一章并做习题,这套书感觉也可能不会看完,实在太多了,看了1本之后估计后面当手册翻翻   这章环境那一些看的不太懂2333  6-1 编译程序清单6-1中的程序，使用ls -l命令显示可执行文件的大小，解释为什么可执行文件的大小远小于10MB，但是程序中包含了一个10MB的数组？  1234567891011121314151617181920212223242526">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-07T09:29:12.954Z">
+<meta property="og:updated_time" content="2018-05-07T15:35:41.761Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tlpi6章习题">
-<meta name="twitter:description" content="所有的blog都是孤芳自赏">
+<meta name="twitter:title" content="linux&#x2F;unix系统编程手册 6章习题">
+<meta name="twitter:description" content="定了个小计划,大概能2-3天看一章并做习题,这套书感觉也可能不会看完,实在太多了,看了1本之后估计后面当手册翻翻   这章环境那一些看的不太懂2333  6-1 编译程序清单6-1中的程序，使用ls -l命令显示可执行文件的大小，解释为什么可执行文件的大小远小于10MB，但是程序中包含了一个10MB的数组？  1234567891011121314151617181920212223242526">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>tlpi6章习题 | jakevin的博客</title>
+  <title>linux/unix系统编程手册 6章习题 | jakevin的博客</title>
   
 
 
@@ -281,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tlpi6章习题</h1>
+          <h1 class="post-title" itemprop="name headline">linux/unix系统编程手册 6章习题</h1>
         
 
         <div class="post-meta">
@@ -331,7 +331,36 @@
       
 
       
-        
+        <blockquote>
+<p>定了个小计划,大概能2-3天看一章并做习题,这套书感觉也可能不会看完,实在太多了,看了1本之后估计后面当手册翻翻</p>
+</blockquote>
+<blockquote>
+<p>这章环境那一些看的不太懂2333</p>
+</blockquote>
+<h3 id="6-1"><a href="#6-1" class="headerlink" title="6-1"></a>6-1</h3><blockquote>
+<p>编译程序清单6-1中的程序，使用ls -l命令显示可执行文件的大小，解释为什么可执行文件的大小远小于10MB，但是程序中包含了一个10MB的数组？</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">char</span> globBuf[<span class="number">65536</span>];</span><br><span class="line"><span class="keyword">int</span> primes[] = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">square</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result;</span><br><span class="line">    result = x * x;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">doCalc</span><span class="params">(<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The square of %d is %d\n"</span>, val, square(val));</span><br><span class="line">    <span class="keyword">if</span> (val &lt; <span class="number">1000</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t;</span><br><span class="line">        t = val * val * val;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"The cube of %d is %d\n"</span>, val, t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> key = <span class="number">9973</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">char</span> mbuf[<span class="number">10240000</span>];</span><br><span class="line">    <span class="keyword">char</span>* p;</span><br><span class="line">    p = <span class="built_in">malloc</span>(<span class="number">1024</span>);</span><br><span class="line">    doCalc(key);</span><br><span class="line">    <span class="built_in">exit</span>(EXIT_SUCCESS);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>编译后占用体积的部分主要是</p>
+<blockquote>
+<p>char globBuf[65536];</p>
+</blockquote>
+<p>至于</p>
+<blockquote>
+<p>static int key = 9973;</p>
+</blockquote>
+<blockquote>
+<p>static char mbuf[10240000];</p>
+</blockquote>
+<p>未初始化的部分不分配空间,后面等程序加载器分配</p>
+<h3 id="6-2"><a href="#6-2" class="headerlink" title="6-2"></a>6-2</h3><p>编写程序，观察longjmp函数试图跳转到一个已经返回的函数中会出现什么。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;setjmp.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">jmp_buf env;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">x</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (setjmp(env) == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"1\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"2\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">y</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    longjmp(env, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"3\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x();</span><br><span class="line">    y();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"4\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>出现</p>
+<p>1</p>
+<p>2</p>
+<p>4</p>
+<p>原因书上有解释,尝试返回一个释放了的栈帧.<br>这个题按着书上 滥用longjmp()部分写就可以了</p>
+<h3 id="6-3"><a href="#6-3" class="headerlink" title="6-3"></a>6-3</h3><p>使用getenv()函数，putenv()函数来实现setenv()和unsetenv()函数。unsetenv函数需要将多个同名的环境变量都移除。</p>
+
       
     </div>
     
@@ -415,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -425,7 +463,7 @@
                 alt="jakevin" />
             
               <p class="site-author-name" itemprop="name">jakevin</p>
-              <p class="site-description motion-element" itemprop="description">所有的blog都是孤芳自赏</p>
+              <p class="site-description motion-element" itemprop="description">想学点东西玩的人,真正的蒟蒻</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -448,7 +486,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -488,6 +526,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1"><span class="nav-number">1.</span> <span class="nav-text">6-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2"><span class="nav-number">2.</span> <span class="nav-text">6-2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3"><span class="nav-number">3.</span> <span class="nav-text">6-3</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
