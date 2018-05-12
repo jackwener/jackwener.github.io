@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,unix系统编程手册," />
+  <meta name="keywords" content="汇编语言," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="看的过程中发现自己C学的很不好啊 …… 之前CSAPP没坚持下来,后面把CSAPP搞定吧… 太菜了╮(╯▽╰)╭  7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。  7-1 修改程序清单7-1中的程序，在每次malloc后打印progr">
-<meta name="keywords" content="Linux,unix系统编程手册">
+<meta name="description" content="扯话开始啃汇编啦,看过CSAPP第三章后,感觉上手还是比较友好的 准备顺序大概是 王爽汇编语言  -&amp;gt;  x86汇编语言:从实模式到保护模式  -&amp;gt;   操作系统 实验准备工作 书上的环境是在windows下,由于我是使用的linux发行版deepin,所以选择了一些工具代替   试了一下,现在用win10去使用DOS估计也不是特别简单,干脆就用LINUX了  使用dosemu模拟DO">
+<meta name="keywords" content="汇编语言">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux&#x2F;unix系统编程手册 7章习题">
-<meta property="og:url" content="http://yoursite.com/2018/05/08/tlpi7章习题/index.html">
+<meta property="og:title" content="汇编语言-王爽-实验任务">
+<meta property="og:url" content="http://yoursite.com/2018/05/11/assasAnswer/index.html">
 <meta property="og:site_name" content="jakevin的博客">
-<meta property="og:description" content="看的过程中发现自己C学的很不好啊 …… 之前CSAPP没坚持下来,后面把CSAPP搞定吧… 太菜了╮(╯▽╰)╭  7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。  7-1 修改程序清单7-1中的程序，在每次malloc后打印progr">
+<meta property="og:description" content="扯话开始啃汇编啦,看过CSAPP第三章后,感觉上手还是比较友好的 准备顺序大概是 王爽汇编语言  -&amp;gt;  x86汇编语言:从实模式到保护模式  -&amp;gt;   操作系统 实验准备工作 书上的环境是在windows下,由于我是使用的linux发行版deepin,所以选择了一些工具代替   试了一下,现在用win10去使用DOS估计也不是特别简单,干脆就用LINUX了  使用dosemu模拟DO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T08:03:23.511Z">
+<meta property="og:updated_time" content="2018-05-12T12:10:36.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux&#x2F;unix系统编程手册 7章习题">
-<meta name="twitter:description" content="看的过程中发现自己C学的很不好啊 …… 之前CSAPP没坚持下来,后面把CSAPP搞定吧… 太菜了╮(╯▽╰)╭  7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。  7-1 修改程序清单7-1中的程序，在每次malloc后打印progr">
+<meta name="twitter:title" content="汇编语言-王爽-实验任务">
+<meta name="twitter:description" content="扯话开始啃汇编啦,看过CSAPP第三章后,感觉上手还是比较友好的 准备顺序大概是 王爽汇编语言  -&amp;gt;  x86汇编语言:从实模式到保护模式  -&amp;gt;   操作系统 实验准备工作 书上的环境是在windows下,由于我是使用的linux发行版deepin,所以选择了一些工具代替   试了一下,现在用win10去使用DOS估计也不是特别简单,干脆就用LINUX了  使用dosemu模拟DO">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/08/tlpi7章习题/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/11/assasAnswer/"/>
 
 
 
 
 
-  <title>linux/unix系统编程手册 7章习题 | jakevin的博客</title>
+  <title>汇编语言-王爽-实验任务 | jakevin的博客</title>
   
 
 
@@ -265,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/tlpi7章习题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/assasAnswer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jakevin">
@@ -282,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux/unix系统编程手册 7章习题</h1>
+          <h1 class="post-title" itemprop="name headline">汇编语言-王爽-实验任务</h1>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T13:48:49+08:00">
-                2018-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T17:17:46+08:00">
+                2018-05-11
               </time>
             
 
@@ -332,49 +332,128 @@
       
 
       
-        <blockquote>
-<p>看的过程中发现自己C学的很不好啊 ……</p>
-<p>之前CSAPP没坚持下来,后面把CSAPP搞定吧…</p>
-<p>太菜了╮(╯▽╰)╭</p>
-</blockquote>
-<h3 id="7-1"><a href="#7-1" class="headerlink" title="7-1"></a>7-1</h3><p> 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。</p>
-<p> 7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。<br>我们可以通过一个更简单的程序来实现观察所需的功能。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"now : %10p\n"</span>, sbrk(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">char</span> * a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">10</span>; i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        a = <span class="built_in">malloc</span>(<span class="number">50000</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d : %10p\n"</span>,i, sbrk(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行程序输出如下：</p>
-<blockquote>
-<p>now : 0xaf060fc000</p>
+        <h1 id="扯话"><a href="#扯话" class="headerlink" title="扯话"></a>扯话</h1><p>开始啃汇编啦,看过CSAPP第三章后,感觉上手还是比较友好的</p>
+<p>准备顺序大概是</p>
+<p>王爽汇编语言  -&gt;  x86汇编语言:从实模式到保护模式  -&gt;   操作系统</p>
+<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><blockquote>
+<p>书上的环境是在windows下,由于我是使用的linux发行版deepin,所以选择了一些工具代替</p>
 </blockquote>
 <blockquote>
-<p>0 : 0xaf0611d000</p>
+<p>试了一下,现在用win10去使用DOS估计也不是特别简单,干脆就用LINUX了</p>
 </blockquote>
+<p>使用dosemu模拟DOS环境</p>
+<h3 id="安装dosemu"><a href="#安装dosemu" class="headerlink" title="安装dosemu"></a>安装dosemu</h3><p>只需要一句简单的命令行即可安装dosemu</p>
+<p><code>sudo apt-get install dosemu</code></p>
+<h3 id="安装MASM6-115-0"><a href="#安装MASM6-115-0" class="headerlink" title="安装MASM6.115.0"></a>安装MASM<del>6.11</del>5.0</h3><p><del>在下载完MASM6.11后，在HOME文件夹下解压，于是我们得到了MASM611的安装文件夹<br>后续安装后,使用过程出现了缺少dosxnt.exe文件的报错,google后折腾了一个小时左右,后面还是换版本了</del></p>
+<p>使用的是MASM5.0</p>
 <blockquote>
-<p>1 : 0xaf0611d000</p>
+<p>dosemu下看到的C盘和D盘只是虚拟出来的，对应的目录在~/.dosemu/drives 下。</p>
 </blockquote>
+<p>下载解压后,将link.exe和masm.exe放到C盘下,直接使用就可以了</p>
+<p>具体使用书上有解释,就不赘述了.</p>
+<p>我自己并不推荐以安装方式,可以直接用masm [option or file][option or flie],这样的方式容易出现很多问题,浪费时间,因为只是需要基本环境,够用即可</p>
+<h2 id="实验1-查看CPU和内存，用机器指令和汇编指令编程"><a href="#实验1-查看CPU和内存，用机器指令和汇编指令编程" class="headerlink" title="实验1 查看CPU和内存，用机器指令和汇编指令编程"></a>实验1 查看CPU和内存，用机器指令和汇编指令编程</h2><ol>
+<li>使用Debug，将下面的程序段写入内存，逐条执行，观察每条指令执行后，CPU中相关寄存器的变化。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>机器码</th>
+<th>汇编指令</th>
+<th>执行后相关寄存器变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b8 20 4e</td>
+<td>mov ax, 4E20H</td>
+<td>AX=4E20H</td>
+</tr>
+<tr>
+<td>05 16 14</td>
+<td>add ax, 1416H</td>
+<td>AX=6236H</td>
+</tr>
+<tr>
+<td>bb 00 20</td>
+<td>mov bx, 2000H</td>
+<td>BX=2000H</td>
+</tr>
+<tr>
+<td>01 d8</td>
+<td>add ax, bx</td>
+<td>AX=8236H</td>
+</tr>
+<tr>
+<td>89 c3</td>
+<td>mov bx, ax</td>
+<td>BX=8236H</td>
+</tr>
+<tr>
+<td>01 d8</td>
+<td>add ax, bx</td>
+<td>AX=046CH</td>
+</tr>
+<tr>
+<td>b8 1a 00</td>
+<td>mov ax, 001AH</td>
+<td>AX=001AH</td>
+</tr>
+<tr>
+<td>bb 26 00</td>
+<td>mov bx, 0026H</td>
+<td>BX=0026H</td>
+</tr>
+<tr>
+<td>00 d8</td>
+<td>add al, bl</td>
+<td>AX=0040H</td>
+</tr>
+<tr>
+<td>00 dc</td>
+<td>add ah, bl</td>
+<td>AX=2640H</td>
+</tr>
+<tr>
+<td>00 c7</td>
+<td>add bh, al</td>
+<td>BX=4026H</td>
+</tr>
+<tr>
+<td>b4 00</td>
+<td>mov ah, 0</td>
+<td>AX=0040H</td>
+</tr>
+<tr>
+<td>00 d8</td>
+<td>add al, bl</td>
+<td>AX=0066H</td>
+</tr>
+<tr>
+<td>04 9c</td>
+<td>add al, 9CH</td>
+<td>AX=0002H</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>2 : 0xaf06141000</p>
+<p>提示，可用E命令和A命令以两种方式将指令写入内存。注意用T命令执行时，CS:IP的指向。</p>
 </blockquote>
+<p>2.将下面3条指令写入从2000:0开始的内存单元中，利用这3条指令计算2的8次方。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">mov ax, 1</span><br><span class="line">add ax, ax</span><br><span class="line">jmp 2000:0003</span><br></pre></td></tr></table></figure>
+<p>一个循环,很好理解</p>
+<p>3.查看内存中的内容。</p>
+<p>PC机主板上的ROM写有一个生产日期，在内存FFF00H～FFFFFH的某几个单元中，请找到这个生产日期并试图改变它。<br>提示，如果读者对实验的结果感到疑惑，请仔细阅读第1章中的1.15节。</p>
 <blockquote>
-<p>3 : 0xaf06141000</p>
+<p>用D命令能看到储存在FFF0:00F5-00FC之间,xx/xx/xx ,模拟器是可以改的,然后真实情况应该是不可以改的(猜测),应该是写死了,无写权限</p>
 </blockquote>
-<blockquote>
-<p>4 : 0xaf06141000</p>
-</blockquote>
-<blockquote>
-<p>5 : 0xaf06166000</p>
-</blockquote>
-<blockquote>
-<p>6 : 0xaf06166000</p>
-</blockquote>
-<blockquote>
-<p>7 : 0xaf06166000</p>
-</blockquote>
-<blockquote>
-<p>8 : 0xaf0618b000</p>
-</blockquote>
-<blockquote>
-<p>9 : 0xaf0618b000</p>
-</blockquote>
-<p>我们可以看到每次实际上边界分配了空间大于我们所需的空间。</p>
-<h3 id="7-2"><a href="#7-2" class="headerlink" title="7-2"></a>7-2</h3><p>实现malloc()和free()。<br>根据课本可以知道，malloc和free是对堆操作的包装，也就是brk函数的包装，在堆空间进行的数据结构的操作</p>
+<h2 id="实验二"><a href="#实验二" class="headerlink" title="实验二"></a>实验二</h2><ol>
+<li>使用Debug，将下面的程序段写入内存，逐条执行，根据指令执行后的实验运行情况填空。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">mov ax, ffff</span><br><span class="line">mov ds, ax</span><br><span class="line">mov ax, 2200</span><br><span class="line">mov ss, ax</span><br><span class="line">mov sp, 1000</span><br><span class="line">mov ax,[0]  ;ax = _____</span><br><span class="line">add ax,[2]  ;ax = _____</span><br><span class="line">mov bx,[4]  ;bx = _____</span><br><span class="line">add bx,[6]  ;bx = _____</span><br><span class="line">push ax     ;sp = _____ 修改的内存单元的地址是_____内容为_____</span><br><span class="line">push bx     ;sp = _____ 修改的内存单元的地址是_____内容为_____</span><br><span class="line">pop ax      ;sp = _____ ax = _____</span><br><span class="line">pop bx      ;sp = _____ bx = _____</span><br><span class="line">push [4]    ;sp = _____ 修改的内存单元的地址是_____内容为_____</span><br><span class="line">push [6]    ;sp = _____ 修改的内存单元的地址是_____内容为_____</span><br></pre></td></tr></table></figure>
+<p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">5bea</span><br><span class="line">00e0</span><br><span class="line">32f0</span><br><span class="line">2f32</span><br><span class="line">00FE 220FE 25EE</span><br><span class="line">00FC 220FC 5F37</span><br><span class="line">00FE 5F37</span><br><span class="line">0100 25EE</span><br><span class="line">00FE 220FE 3002</span><br><span class="line">00FC 220FC 2F35</span><br></pre></td></tr></table></figure></p>
+<p>2.仔细观察图3.19中的实验过程，然后分析：为什么2000:0～2000:f中的内容会发生改变？</p>
+<p>在使用T命令时,产生了中断，为了保护现场，CPU将CS和IP,此时的位置,入栈，导致了内存相关位置内容的改变。</p>
 
       
     </div>
@@ -392,9 +471,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/unix系统编程手册/" rel="tag"># unix系统编程手册</a>
+            <a href="/tags/汇编语言/" rel="tag"># 汇编语言</a>
           
         </div>
       
@@ -407,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/07/tlpi6章习题/" rel="next" title="linux/unix系统编程手册 6章习题">
-                <i class="fa fa-chevron-left"></i> linux/unix系统编程手册 6章习题
+              <a href="/2018/05/11/bombLab/" rel="next" title="CSAPP bomblab（伪）报告">
+                <i class="fa fa-chevron-left"></i> CSAPP bomblab（伪）报告
               </a>
             
           </div>
@@ -416,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/09/tlpi8章习题/" rel="prev" title="linux/unix系统编程手册 8章习题">
-                linux/unix系统编程手册 8章习题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1"><span class="nav-number">1.</span> <span class="nav-text">7-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2"><span class="nav-number">2.</span> <span class="nav-text">7-2</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#扯话"><span class="nav-number">1.</span> <span class="nav-text">扯话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验"><span class="nav-number">2.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装dosemu"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装dosemu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MASM6-115-0"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装MASM6.115.0</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验1-查看CPU和内存，用机器指令和汇编指令编程"><span class="nav-number">2.2.</span> <span class="nav-text">实验1 查看CPU和内存，用机器指令和汇编指令编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二"><span class="nav-number">2.3.</span> <span class="nav-text">实验二</span></a></li></ol></li></ol></div>
             
 
           </div>
