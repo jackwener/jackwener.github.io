@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="jakevin的博客">
 <meta property="og:description" content="扯话开始啃汇编啦,看过CSAPP第三章后,感觉上手还是比较友好的 准备顺序大概是 王爽汇编语言  -&amp;gt;  x86汇编语言:从实模式到保护模式  -&amp;gt;   操作系统 实验准备工作 书上的环境是在windows下,由于我是使用的linux发行版deepin,所以选择了一些工具代替   试了一下,现在用win10去使用DOS估计也不是特别简单,干脆就用LINUX了  使用dosemu模拟DO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T12:10:36.795Z">
+<meta property="og:updated_time" content="2018-05-12T17:32:50.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="汇编语言-王爽-实验任务">
 <meta name="twitter:description" content="扯话开始啃汇编啦,看过CSAPP第三章后,感觉上手还是比较友好的 准备顺序大概是 王爽汇编语言  -&amp;gt;  x86汇编语言:从实模式到保护模式  -&amp;gt;   操作系统 实验准备工作 书上的环境是在windows下,由于我是使用的linux发行版deepin,所以选择了一些工具代替   试了一下,现在用win10去使用DOS估计也不是特别简单,干脆就用LINUX了  使用dosemu模拟DO">
@@ -351,7 +351,6 @@
 </blockquote>
 <p>下载解压后,将link.exe和masm.exe放到C盘下,直接使用就可以了</p>
 <p>具体使用书上有解释,就不赘述了.</p>
-<p>我自己并不推荐以安装方式,可以直接用masm [option or file][option or flie],这样的方式容易出现很多问题,浪费时间,因为只是需要基本环境,够用即可</p>
 <h2 id="实验1-查看CPU和内存，用机器指令和汇编指令编程"><a href="#实验1-查看CPU和内存，用机器指令和汇编指令编程" class="headerlink" title="实验1 查看CPU和内存，用机器指令和汇编指令编程"></a>实验1 查看CPU和内存，用机器指令和汇编指令编程</h2><ol>
 <li>使用Debug，将下面的程序段写入内存，逐条执行，观察每条指令执行后，CPU中相关寄存器的变化。</li>
 </ol>
@@ -454,6 +453,78 @@
 <p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">5bea</span><br><span class="line">00e0</span><br><span class="line">32f0</span><br><span class="line">2f32</span><br><span class="line">00FE 220FE 25EE</span><br><span class="line">00FC 220FC 5F37</span><br><span class="line">00FE 5F37</span><br><span class="line">0100 25EE</span><br><span class="line">00FE 220FE 3002</span><br><span class="line">00FC 220FC 2F35</span><br></pre></td></tr></table></figure></p>
 <p>2.仔细观察图3.19中的实验过程，然后分析：为什么2000:0～2000:f中的内容会发生改变？</p>
 <p>在使用T命令时,产生了中断，为了保护现场，CPU将CS和IP,此时的位置,入栈，导致了内存相关位置内容的改变。</p>
+<h2 id="实验三"><a href="#实验三" class="headerlink" title="实验三"></a>实验三</h2><ol>
+<li>将下面的程序保存为t1.asm文件，将其生成可执行文件t1.exe。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">assume cs:codesg</span><br><span class="line">codesg segment</span><br><span class="line">mov ax, 2000H</span><br><span class="line">mov ss, ax</span><br><span class="line">mov sp, 0</span><br><span class="line">add sp, 10</span><br><span class="line">pop ax</span><br><span class="line">pop bx</span><br><span class="line">push ax</span><br><span class="line">push bx</span><br><span class="line">pop ax</span><br><span class="line">pop bx</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line">codesg ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>这个没什么好说的….</p>
+<ol>
+<li>用Debug跟踪t1.exe的执行过程，写出每一步执行后，相关寄存器中的内容和栈顶的内容。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ax 2000H</td>
+</tr>
+<tr>
+<td>ss 2000H</td>
+</tr>
+<tr>
+<td>sp 0000H</td>
+</tr>
+<tr>
+<td>sp 000AH</td>
+</tr>
+<tr>
+<td>ax 0 sp 000cH</td>
+</tr>
+<tr>
+<td>bx 0 sp 000EH</td>
+</tr>
+<tr>
+<td>sp 000cH</td>
+</tr>
+<tr>
+<td>sp 000AH</td>
+</tr>
+<tr>
+<td>ax 0 sp 000cH</td>
+</tr>
+<tr>
+<td>bx 0 sp 000EH</td>
+</tr>
+<tr>
+<td>ax 4c00H</td>
+</tr>
+<tr>
+<td>empty</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>PSP头两个字节为CD 20,用debug加载t1.exe.查看PSP内容：</li>
+</ol>
+<p>PSP区域地址范围为:ds:0~ds:ff.用d命令查看即可</p>
+<h2 id="实验四"><a href="#实验四" class="headerlink" title="实验四"></a>实验四</h2><ol>
+<li>编程，向内存0:200～0:23F依此传送数据0～63（3FH）。</li>
+</ol>
+<p>见下</p>
+<ol>
+<li>编程，向内存0:200～0:23F依此传送数据0～63（3FH），程序中只能使用9条指令，9条指令中包括“mov ax, 4c00h”和“int 21h”。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">mov ax, 0020h</span><br><span class="line">mov ds, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, 64</span><br><span class="line">s:   mov [bx], bl ;此处注意![bx]为一字节,用bl</span><br><span class="line">inc bl</span><br><span class="line">loop s</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<ol>
+<li>下面的程序的功能是将“mov ax, 4c00h”之前的指令复制到内存的0:200处，补全程序，上机调试，跟踪运行结果。</li>
+</ol>
+<p>下面的程序的功能是将“mov ax, 4c00h”之前的指令复制到内存的0:200处，补全程序，上机调试，跟踪运行结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code</span><br><span class="line">code segment</span><br><span class="line">mov ax, _____</span><br><span class="line">mov ds, ax</span><br><span class="line">mov ax, 0020h</span><br><span class="line">mov es, ax</span><br><span class="line">mov bx, 0</span><br><span class="line">mov cx, _____</span><br><span class="line">s:      mov al, [bx]</span><br><span class="line">mov es:[bx], al</span><br><span class="line">inc bx</span><br><span class="line">loop s</span><br><span class="line">mov ax, 4c00h</span><br><span class="line">int 21h</span><br><span class="line">code ends</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>程序入口为cs:0(ip=0),所以第一空处传递段地址为cs</p>
+<p>而程序总代码长度可通过debug加载后通过u命令看出.先将第二空位随便设为1，加载后观察mov ax,4c00h之前代码为0000~0016h，总长度为23.</p>
 
       
     </div>
@@ -636,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#扯话"><span class="nav-number">1.</span> <span class="nav-text">扯话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验"><span class="nav-number">2.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装dosemu"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装dosemu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MASM6-115-0"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装MASM6.115.0</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验1-查看CPU和内存，用机器指令和汇编指令编程"><span class="nav-number">2.2.</span> <span class="nav-text">实验1 查看CPU和内存，用机器指令和汇编指令编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二"><span class="nav-number">2.3.</span> <span class="nav-text">实验二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#扯话"><span class="nav-number">1.</span> <span class="nav-text">扯话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验"><span class="nav-number">2.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装dosemu"><span class="nav-number">2.1.1.</span> <span class="nav-text">安装dosemu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MASM6-115-0"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装MASM6.115.0</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验1-查看CPU和内存，用机器指令和汇编指令编程"><span class="nav-number">2.2.</span> <span class="nav-text">实验1 查看CPU和内存，用机器指令和汇编指令编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验二"><span class="nav-number">2.3.</span> <span class="nav-text">实验二</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验三"><span class="nav-number">2.4.</span> <span class="nav-text">实验三</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验四"><span class="nav-number">2.5.</span> <span class="nav-text">实验四</span></a></li></ol></li></ol></div>
             
 
           </div>
