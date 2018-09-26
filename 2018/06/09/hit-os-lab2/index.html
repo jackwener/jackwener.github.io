@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,unix系统编程手册," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,18 +81,17 @@
 
 
 
-<meta name="description" content="看的过程中发现自己C学的很不好啊 …… 之前CSAPP没坚持下来,后面把CSAPP搞定吧… 太菜了╮(╯▽╰)╭  7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。  7-1 修改程序清单7-1中的程序，在每次malloc后打印progr">
-<meta name="keywords" content="Linux,unix系统编程手册">
+<meta name="description" content="想学点东西玩的人,真正的蒟蒻">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux&#x2F;unix系统编程手册 7章习题">
-<meta property="og:url" content="http://yoursite.com/2018/05/08/tlpi7章习题/index.html">
+<meta property="og:title" content="hit-os-lab2">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/hit-os-lab2/index.html">
 <meta property="og:site_name" content="jakevin的博客">
-<meta property="og:description" content="看的过程中发现自己C学的很不好啊 …… 之前CSAPP没坚持下来,后面把CSAPP搞定吧… 太菜了╮(╯▽╰)╭  7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。  7-1 修改程序清单7-1中的程序，在每次malloc后打印progr">
+<meta property="og:description" content="想学点东西玩的人,真正的蒟蒻">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T08:03:23.511Z">
+<meta property="og:updated_time" content="2018-06-09T02:28:21.778Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux&#x2F;unix系统编程手册 7章习题">
-<meta name="twitter:description" content="看的过程中发现自己C学的很不好啊 …… 之前CSAPP没坚持下来,后面把CSAPP搞定吧… 太菜了╮(╯▽╰)╭  7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。  7-1 修改程序清单7-1中的程序，在每次malloc后打印progr">
+<meta name="twitter:title" content="hit-os-lab2">
+<meta name="twitter:description" content="想学点东西玩的人,真正的蒟蒻">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/08/tlpi7章习题/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/09/hit-os-lab2/"/>
 
 
 
 
 
-  <title>linux/unix系统编程手册 7章习题 | jakevin的博客</title>
+  <title>hit-os-lab2 | jakevin的博客</title>
   
 
 
@@ -265,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/08/tlpi7章习题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/hit-os-lab2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jakevin">
@@ -282,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">linux/unix系统编程手册 7章习题</h1>
+          <h1 class="post-title" itemprop="name headline">hit-os-lab2</h1>
         
 
         <div class="post-meta">
@@ -294,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T13:48:49+08:00">
-                2018-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T10:28:21+08:00">
+                2018-06-09
               </time>
             
 
@@ -332,50 +331,7 @@
       
 
       
-        <blockquote>
-<p>看的过程中发现自己C学的很不好啊 ……</p>
-<p>之前CSAPP没坚持下来,后面把CSAPP搞定吧…</p>
-<p>太菜了╮(╯▽╰)╭</p>
-</blockquote>
-<h3 id="7-1"><a href="#7-1" class="headerlink" title="7-1"></a>7-1</h3><p> 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。</p>
-<p> 7-1 修改程序清单7-1中的程序，在每次malloc后打印program break 的值。指定一个较小的内存分配尺寸，观察现象，证明的每次malloc后program break分配了超过所需的内存区域。<br>我们可以通过一个更简单的程序来实现观察所需的功能。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"now : %10p\n"</span>, sbrk(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">char</span> * a;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">10</span>; i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        a = <span class="built_in">malloc</span>(<span class="number">50000</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d : %10p\n"</span>,i, sbrk(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行程序输出如下：</p>
-<blockquote>
-<p>now : 0xaf060fc000</p>
-</blockquote>
-<blockquote>
-<p>0 : 0xaf0611d000</p>
-</blockquote>
-<blockquote>
-<p>1 : 0xaf0611d000</p>
-</blockquote>
-<blockquote>
-<p>2 : 0xaf06141000</p>
-</blockquote>
-<blockquote>
-<p>3 : 0xaf06141000</p>
-</blockquote>
-<blockquote>
-<p>4 : 0xaf06141000</p>
-</blockquote>
-<blockquote>
-<p>5 : 0xaf06166000</p>
-</blockquote>
-<blockquote>
-<p>6 : 0xaf06166000</p>
-</blockquote>
-<blockquote>
-<p>7 : 0xaf06166000</p>
-</blockquote>
-<blockquote>
-<p>8 : 0xaf0618b000</p>
-</blockquote>
-<blockquote>
-<p>9 : 0xaf0618b000</p>
-</blockquote>
-<p>我们可以看到每次实际上边界分配了空间大于我们所需的空间。</p>
-<h3 id="7-2"><a href="#7-2" class="headerlink" title="7-2"></a>7-2</h3><p>实现malloc()和free()。<br>根据课本可以知道，malloc和free是对堆操作的包装，也就是brk函数的包装，在堆空间进行的数据结构的操作</p>
-
+        
       
     </div>
     
@@ -390,14 +346,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Linux/" rel="tag"># Linux</a>
-          
-            <a href="/tags/unix系统编程手册/" rel="tag"># unix系统编程手册</a>
-          
-        </div>
-      
 
       
       
@@ -407,8 +355,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/07/tlpi6章习题/" rel="next" title="linux/unix系统编程手册 6章习题">
-                <i class="fa fa-chevron-left"></i> linux/unix系统编程手册 6章习题
+              <a href="/2018/06/09/hit-os-lab1/" rel="next" title="hit-os-lab1">
+                <i class="fa fa-chevron-left"></i> hit-os-lab1
               </a>
             
           </div>
@@ -416,10 +364,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/09/tlpi8章习题/" rel="prev" title="linux/unix系统编程手册 8章习题">
-                linux/unix系统编程手册 8章习题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -471,17 +415,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -553,22 +488,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1"><span class="nav-number">1.</span> <span class="nav-text">7-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2"><span class="nav-number">2.</span> <span class="nav-text">7-2</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

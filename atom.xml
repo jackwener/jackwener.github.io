@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-29T15:06:36.939Z</updated>
+  <updated>2018-06-09T02:28:21.778Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hit-os-lab2</title>
+    <link href="http://yoursite.com/2018/06/09/hit-os-lab2/"/>
+    <id>http://yoursite.com/2018/06/09/hit-os-lab2/</id>
+    <published>2018-06-09T02:28:21.000Z</published>
+    <updated>2018-06-09T02:28:21.778Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hit-os-lab1</title>
+    <link href="http://yoursite.com/2018/06/09/hit-os-lab1/"/>
+    <id>http://yoursite.com/2018/06/09/hit-os-lab1/</id>
+    <published>2018-06-09T02:28:05.000Z</published>
+    <updated>2018-06-09T02:28:05.298Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSAPP attacklab（伪）报告</title>
