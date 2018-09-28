@@ -90,7 +90,7 @@
 <meta property="og:description" content="ucore lab2实验报告 实验二 主要针对完成Ucore的物理内存管理  练习0 key point: 利用meld工具进行比较与合并  练习1：实现first-fit练习物理内存分配算法介绍ucore很详细的总结  Note: 连续分配方式，是指为一个用户程序分配一个连续的内存空间。它主要包括单一连续分配、固定分区分配和动态分区分配。 单一连续分配固定分区分配动态分区分配 动态分区分配又称为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://jackwener.github.io/2018/09/28/ucore-lab2实验报告/%27/images/ucore_lab2/1.jpg%27">
-<meta property="og:updated_time" content="2018-09-28T15:13:28.847Z">
+<meta property="og:updated_time" content="2018-09-28T15:21:09.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ucore_lab2实验报告">
 <meta name="twitter:description" content="ucore lab2实验报告 实验二 主要针对完成Ucore的物理内存管理  练习0 key point: 利用meld工具进行比较与合并  练习1：实现first-fit练习物理内存分配算法介绍ucore很详细的总结  Note: 连续分配方式，是指为一个用户程序分配一个连续的内存空间。它主要包括单一连续分配、固定分区分配和动态分区分配。 单一连续分配固定分区分配动态分区分配 动态分区分配又称为">
@@ -345,10 +345,12 @@
 <blockquote>
 <p>Note:</p>
 <p>连续分配方式，是指为一个用户程序分配一个连续的内存空间。它主要包括单一连续分配、固定分区分配和动态分区分配。</p>
-<h3 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h3><h3 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h3><h3 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h3><blockquote>
+<h4 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h4><h4 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h4><h4 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h4><blockquote>
 <p>动态分区分配又称为可变分区分配，是一种动态划分内存的分区方法。这种分区方法不预先将内存划分，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。因此系统中分区的大小和数目是可变的</p>
 </blockquote>
+</blockquote>
 <p><img src="&#39;/images/ucore_lab2/1.jpg&#39;" alt="动态分区"></p>
+<blockquote>
 <p>在进程装入或换入主存时，如果内存中有多个足够大的空闲块，操作系统必须确定分配哪个内存块给进程使用，这就是动态分区的分配策略，考虑以下几种算法：</p>
 <ul>
 <li>首次适应(First  Fit)算法：空闲分区以地址递增的次序链接。分配内存时顺序查找，找到大小能满足要求的第一个空闲分区。</li>
@@ -585,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ucore-lab2实验报告"><span class="nav-number">1.</span> <span class="nav-text">ucore lab2实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#练习0"><span class="nav-number">1.1.</span> <span class="nav-text">练习0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习1：实现first-fit练习物理内存分配算法"><span class="nav-number">1.2.</span> <span class="nav-text">练习1：实现first-fit练习物理内存分配算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单一连续分配"><span class="nav-number">1.3.</span> <span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定分区分配"><span class="nav-number">1.4.</span> <span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态分区分配"><span class="nav-number">1.5.</span> <span class="nav-text">动态分区分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习2：实现寻找虚拟地址对应的页表项"><span class="nav-number">1.6.</span> <span class="nav-text">练习2：实现寻找虚拟地址对应的页表项</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ucore-lab2实验报告"><span class="nav-number">1.</span> <span class="nav-text">ucore lab2实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#练习0"><span class="nav-number">1.1.</span> <span class="nav-text">练习0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习1：实现first-fit练习物理内存分配算法"><span class="nav-number">1.2.</span> <span class="nav-text">练习1：实现first-fit练习物理内存分配算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单一连续分配"><span class="nav-number">1.2.1.</span> <span class="nav-text">单一连续分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#固定分区分配"><span class="nav-number">1.2.2.</span> <span class="nav-text">固定分区分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态分区分配"><span class="nav-number">1.2.3.</span> <span class="nav-text">动态分区分配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习2：实现寻找虚拟地址对应的页表项"><span class="nav-number">1.3.</span> <span class="nav-text">练习2：实现寻找虚拟地址对应的页表项</span></a></li></ol></li></ol></div>
             
 
           </div>
