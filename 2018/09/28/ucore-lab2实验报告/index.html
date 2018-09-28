@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="jakevin的博客">
 <meta property="og:description" content="ucore lab2实验报告 实验二 主要针对完成Ucore的物理内存管理  练习0 key point: 利用meld工具进行比较与合并  练习1：实现first-fit练习物理内存分配算法介绍ucore很详细的总结  Note: 连续分配方式，是指为一个用户程序分配一个连续的内存空间。它主要包括单一连续分配、固定分区分配和动态分区分配。 单一连续分配固定分区分配动态分区分配 动态分区分配又称为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://jackwener.github.io/2018/09/28/ucore-lab2实验报告/%27/images/ucore_lab2/1.jpg%27">
-<meta property="og:updated_time" content="2018-09-28T15:21:09.087Z">
+<meta property="og:image" content="https://jackwener.github.io/images/ucore_lab2/1.jpg">
+<meta property="og:updated_time" content="2018-09-28T15:25:12.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ucore_lab2实验报告">
 <meta name="twitter:description" content="ucore lab2实验报告 实验二 主要针对完成Ucore的物理内存管理  练习0 key point: 利用meld工具进行比较与合并  练习1：实现first-fit练习物理内存分配算法介绍ucore很详细的总结  Note: 连续分配方式，是指为一个用户程序分配一个连续的内存空间。它主要包括单一连续分配、固定分区分配和动态分区分配。 单一连续分配固定分区分配动态分区分配 动态分区分配又称为">
-<meta name="twitter:image" content="https://jackwener.github.io/2018/09/28/ucore-lab2实验报告/%27/images/ucore_lab2/1.jpg%27">
+<meta name="twitter:image" content="https://jackwener.github.io/images/ucore_lab2/1.jpg">
 
 
 
@@ -348,9 +348,7 @@
 <h4 id="单一连续分配"><a href="#单一连续分配" class="headerlink" title="单一连续分配"></a>单一连续分配</h4><h4 id="固定分区分配"><a href="#固定分区分配" class="headerlink" title="固定分区分配"></a>固定分区分配</h4><h4 id="动态分区分配"><a href="#动态分区分配" class="headerlink" title="动态分区分配"></a>动态分区分配</h4><blockquote>
 <p>动态分区分配又称为可变分区分配，是一种动态划分内存的分区方法。这种分区方法不预先将内存划分，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。因此系统中分区的大小和数目是可变的</p>
 </blockquote>
-</blockquote>
-<p><img src="&#39;/images/ucore_lab2/1.jpg&#39;" alt="动态分区"></p>
-<blockquote>
+<p><img src="/images/ucore_lab2/1.jpg" alt="动态分区"></p>
 <p>在进程装入或换入主存时，如果内存中有多个足够大的空闲块，操作系统必须确定分配哪个内存块给进程使用，这就是动态分区的分配策略，考虑以下几种算法：</p>
 <ul>
 <li>首次适应(First  Fit)算法：空闲分区以地址递增的次序链接。分配内存时顺序查找，找到大小能满足要求的第一个空闲分区。</li>
