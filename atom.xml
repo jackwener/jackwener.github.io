@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jackwener.github.io/"/>
-  <updated>2018-10-09T04:20:34.937Z</updated>
+  <updated>2018-10-09T05:20:46.923Z</updated>
   <id>https://jackwener.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ucore-lab1实验报告</title>
+    <link href="https://jackwener.github.io/2018/10/09/ucore-lab1%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/"/>
+    <id>https://jackwener.github.io/2018/10/09/ucore-lab1实验报告/</id>
+    <published>2018-10-09T05:19:03.000Z</published>
+    <updated>2018-10-09T05:20:46.923Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Ucore-lab1实验报告"><a href="#Ucore-lab1实验报告" class="headerlink" title="Ucore lab1实验报告"></a>Ucore lab1实验报告</h1><h2 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h2><h3 id="practice1"><a href="#practice1" class="headerlink" title="practice1"></a>practice1</h3><ol><li>为何开启A20，以及如何开启A20</li><li>如何初始化GDT表（什么是GDT和LDT）</li><li>如何使能和进入保护模式</li></ol><blockquote><p>Intel x86系列CPU有实模式和保护模式，实模式从8086开始就有，保护模式从80386开始引入。为了兼容，Intel x86系列CPU都支持实模式。现代操作系统都是运行在保护模式下（Intel x86系列CPU）。计算机启动时，默认的工作模式是实模式，为了让内核能运行在保护模式下，Bootloader需要从实模式切换到保护模式，切换步骤如下：</p><ol><li>准备好GDT(Global Descriptor Table)</li><li>关中断</li><li>加载GDT到GDTR寄存器</li><li>开启A20，让CPU寻址大于1M</li><li>开启CPU的保护模式，即把cr0寄存器第一个bit置1</li><li>跳转到保护模式代码</li></ol></blockquote><h2 id="practice2"><a href="#practice2" class="headerlink" title="practice2"></a>practice2</h2><ol><li>bootloader如何读取硬盘扇区的？</li><li>bootloader是如何加载ELF格式的OS？</li></ol><blockquote><p>计算机启动是从BIOS开始，再由BIOS决定从哪个设备启动以及启动顺序，比如先从DVD启动再从硬盘启动等。计算机启动后，BIOS根据配置找到启动设备，并读取这个设备的第0个扇区，把这个扇区的内容加载到0x7c00,之后让CPU从0x7c00开始执行，这时BIOS已经交出了计算机的控制权，由被加载的扇区程序接管计算机。</p><p>这第一个扇区的程序就叫Boot，它一般做一些准备工作，把操作系统内核加载进内存，并把控制权交给内核。由于Boot只能有一个扇区大小，即512字节，它所能做的工作很有限，因此它有可能不直接加载内核，而是加载一个叫Loader的程序，再由Loader加载内核。因为Loader不是BIOS直接加载的，所以它可以突破512字节的程序大小限制（在实模式下理论上可以达到1M）。如果Boot没有加载Loader而直接加载内核，我们可以把它叫做Bootloader。</p><p>Bootloader加载内核就要读取文件，在实模式下可以用BIOS的INT 13h中断。内核文件放在哪里，怎么查找读取，这里牵涉到文件系统，Bootloader要从硬盘（软盘）的文件系统中查找内核文件，因此Bootloader需要解析文件系统的能力。GRUB是一个专业的Bootloader，它对这些提供了很好的支持</p></blockquote><p><a href="https://blog.csdn.net/flydream0/article/details/8719036" target="_blank" rel="noopener">elf格式前提须知</a></p><p>lab1感觉没啥好写的…弃之</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Ucore-lab1实验报告&quot;&gt;&lt;a href=&quot;#Ucore-lab1实验报告&quot; class=&quot;headerlink&quot; title=&quot;Ucore lab1实验报告&quot;&gt;&lt;/a&gt;Ucore lab1实验报告&lt;/h1&gt;&lt;h2 id=&quot;第一部分&quot;&gt;&lt;a href=&quot;#第
+      
+    
+    </summary>
+    
+    
+      <category term="OS" scheme="https://jackwener.github.io/tags/OS/"/>
+    
+      <category term="操作系统" scheme="https://jackwener.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>ucore_lab2实验报告</title>
